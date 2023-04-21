@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>
+            Lesson 4
+        </title>
+        <style>
+            p {
+                font: 14px normal arial, verdana, helvetica;
+            }
+        </style>
+        <script>
+            function telltime() {
+                var out = "";
+                var now = new Date();
+                out += now.toDateString() + " " + now.toTimeString();
+                document.getElementById("div1").innerHTML = out;
+            }
+        </script>
+    </head>
+
+    <body>
+        The current date and time are:<br/>
+        <div id="div1"></div>
+        <script>
+            telltime();
+        </script>
+        <input type="button" onclick="location.reload()" value="Refresh"/>
+
+        <!-- Use Math object to write a function to return the volume of a round chimney, given its radius and height in meters as ARGUMENTS-->
+    </body>
+</html>
