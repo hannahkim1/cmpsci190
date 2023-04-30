@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Card</title>
+        <script>
+            function Card(suit, face) {
+                this.suit = suit;
+                this.face = face;
+
+                this.setSuit = function(newSuit) {
+                    this.suit = newSuit;
+                }
+
+                this.setFace = function(newFace) {
+                    this.face = newFace;
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+        <script>
+            var card1 = new Card('hearts', 'king');
+            card1.setSuit('clubs');
+            card1.setFace('ace');
+
+            document.write("Card 1's suit is " + card1.suit + ", its face is " + card1.face + "\n");
+        </script>
+
+    </body>
+</html>
