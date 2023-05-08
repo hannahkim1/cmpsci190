@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lesson 12 Lab</title>
+        <script>
+            function insertAfter(newNode, targetNode) {
+                var newPara = document.createElement("p");
+                newPara.textContent = "This is the text inserted after.";
+
+                var myDiv = document.getElementById("id1");
+                var para2 = document.getElementById("para2");
+                
+                myDiv.insertBefore (newPara, para2.nextSibling);
+            }
+
+            window.onload = function() {
+                document.getElementById("btn").onclick = insertAfter;
+            }
+        </script>
+    </head>
+
+    <body>
+        <div id="id1">
+            <p id="para1">This paragraph contains some text.</p>
+            <p id="para2">Here's some more text.</p>
+
+            <input id="btn" value="Insert After" type="button"/>
+        </div>
+    </body>
+</html>
