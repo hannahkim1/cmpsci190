@@ -7,14 +7,8 @@
         <style>
             span {
                 font-size: 16pt;
-
-                /* changed */
-                font-family: monospace, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-                text-decoration: underline; 
-
-                border-radius: 20px;
-                padding: 35px;
-                margin: 40px;
+                font-family: Arial, Helvetica, sans-serif;
+                padding: 20px;
             }
         </style>
 
@@ -24,10 +18,20 @@
                 if (myElement.style.backgroundColor == 'red') {
                     myElement.style.backgroundColor == 'yellow';
                     myElement.style.color = 'black';
+
+                    /* added */
+                    myElement.style.fontFamily = 'monospace';
+                    myElement.style.textDecoration = 'underline'; 
+
                 }
                 else {
                     myElement.style.backgroundColor = 'red';
                     myElement.style.color = 'white';
+
+                    /* added */
+                    myElement.style.borderRadius = '20px';
+                    myElement.style.padding = '35px';
+                    myElement.style.margin = '40px';
                 }
             }
         
