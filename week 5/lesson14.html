@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Current Date and Time</title>
+        <style>
+            p {
+                font: 14px normal arial, verdana, helvetica;
+            }
+        </style>
+        <script src="datetime.js"></script>
+    </head>
+
+    <body>
+        <script>
+            document.body.innerHTML = 'The current date and time are:<br/> <button onclick="location.reload()" id="btn1">Refresh</button>';
+        </script>
+        
+        <div id="div1"></div>
+        <!-- moved the button and text to document.body.innerHTML
+        because if javascript is not enabled, it will not run script
+        -->
+
+        <noscript>
+            <p>Your browser does not support JavaScript.</p>
+            <p>Please consult your computer's operating system for local date and time information or click 
+                <a href="clock.php" target = "_blank">HERE</a> to read the server time.</p>
+        </noscript>
+    </body>
+</html>
