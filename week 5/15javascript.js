@@ -1,21 +1,45 @@
 var timer1 = null; 
+var timer2 = null; // make another timer to differentiate
 var el = null;
 var score = 0; // number of 'hits'
 var shots = 0; // total 'shots'
 
+
 function moveIt() {
+
     // animate the image
-    if(parseInt(el.style.left) > (screen.width - 50) || parseInt(el.style.top) > (screen.height - 50)) {
-        el.style.left = 0;
-        el.style.top = 0;
+    if(parseInt(el.style.left) > (screen.width - 50)) {
+        moveLeft();
     }
-
-    el.style.left = 100 + (500 * Math.sin(parseInt(el.style.top) / 100)) + 'px';
-    el.style.top = parseInt(el.style.top) + 6 + 'px';
-
-    // set the timer
-    timer1 = setTimeout(moveIt, 30);
+    else {
+        el.style.left = parseInt(el.style.left) + 6 + 'px';
+    
+        el.style.top = 100 + (80 * Math.sin(parseInt(el.style.left) / 50)) + 'px';
+        
+        // set the timer
+        timer1 = setTimeout(moveIt, 30);
+    }
 }
+
+function moveLeft() {
+    
+    // animate the image
+    if(parseInt(el.style.left) < 0) {
+        moveIt(); // once it reaches 0, it should move back the other way
+    }
+    else {
+        el.style.left = parseInt(el.style.left) - 6 + 'px';
+        // - 6 makes it move the other way
+    
+        el.style.top = 100 + (80 * Math.sin(parseInt(el.style.left) / 50)) + 'px';
+       
+        // set the timer
+        timer2 = setTimeout(moveLeft, 30);
+    }
+}
+
+
+
 
 function scoreUp() {
     // increment the player's score
@@ -42,7 +66,9 @@ window.onload = function() {
         // update scoreboard
         scoreboard();
     }
+    
     // initialize game 
+    
     scoreboard();
     el.style.left = '50px';
     el.style.top = '50px';
