@@ -35,3 +35,11 @@ function responseAjax() {
 }
 
 var myRequest = getXMLHttpRequest();
+
+// automatically shows up after loading into the page
+window.onload = function() {
+    callAjax();
+}
+
+// makes the automatic timer to update every 3 seconds
+setInterval(callAjax, 3000);
