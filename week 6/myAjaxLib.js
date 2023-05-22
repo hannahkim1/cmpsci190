@@ -28,7 +28,7 @@ function doAjax(url, query, callback, reqtype, getxml) {
                     item = myreq.responseXML;
                 }
                 
-                eval(callback + ('item'));
+                eval(callback + '(item)');
                 document.body.removeChild(message);
             }
         }
@@ -36,7 +36,7 @@ function doAjax(url, query, callback, reqtype, getxml) {
     if(reqtype.toUpperCase() == "POST") {
         requestPOST(url, query, myreq);
     } else {
-        XMLHttpRequestEventTarget(url, query, myreq);
+        requestGET(url, query, myreq);
     }
 }
 
