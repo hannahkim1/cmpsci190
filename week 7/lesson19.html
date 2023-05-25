@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Lesson 19 - Hannah Kim</title>
+        <script src="prototype.js"></script>
+
+    </head>
+
+    <body>
+        <div id="changecolor">Click the button to reveal your true color!</div>
+        <button id="buttoncolor">Change color</div>
+
+        <script>
+            document.observe('dom:loaded', function() {
+                var colors = $('changecolor'); // using prototype.js
+                var buttoncolor = $('buttoncolor'); // using prototype.js
+
+                // array to create random options of colors
+                var differentcolors = ['red', 'orange', 'yellow', 'green', 'purple'];
+
+                // .observe is using prototype.js
+                buttoncolor.observe('click', function() {
+                    var randomColor = Math.floor(Math.random() * differentcolors.length);
+                    var color = differentcolors[randomColor];
+
+                    colors.update(color + ' is your true color!');
+                });
+            });
+            
+        </script>
+    </body>
+</html>
