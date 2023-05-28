@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Lesson 20 Lab</title>
+        <script src="jquery-3.7.0.js"></script>
+
+        <style>
+            span {
+                font-size: 16pt;
+                font-family: Arial, Helvetica, sans-serif;
+                padding: 20px;
+            }
+        </style>
+
+        <script>
+            $(document).ready(function() {
+                function toggle() {
+
+                // dont need the document.getElementById anymore
+                var myElement = $("#id1");
+
+                // simplifying to .css
+                if(myElement.css("background-color") == "red") {
+                    myElement.css("background-color", "yellow");
+                    myElement.css("color", "black");
+                } else {
+                    myElement.css("background-color", "red");
+                    myElement.css("color", "white");
+                }
+            }
+
+                // dont need the document.getElementById anymore
+                    // replacing onclick with toggle
+                $("#btn1").click(toggle);
+            })
+           
+        </script>
+    </head>
+
+    <body>
+        <h1>Second example of rewriting code to jQuery</h1>
+        <h2>Hour 13 - Listing 13.1</h2>
+
+        <span id="id1">Welcome back to my site.</span>
+        <input type="button" id="btn1" value="Toggle"/>
+
+        <a href="lesson20.html">First example</a>
+    </body>
+</html>

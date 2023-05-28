@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Lesson 20 Lab</title>
+        <script src="jquery-3.7.0.js"></script>
+        <script>
+            $(document).ready(function() {
+                // keeping same code as before
+                function myObjectType() {
+                this.info = 'I am a shiny new object';
+
+                this.showInfo = function() {
+                    alert(this.info);
+                }
+                this.setInfo = function (newInfo) {
+                    this.info = newInfo;
+                }
+                }
+
+                var myNewObject1 = new myObjectType();
+                var myNewObject2 = new myObjectType();
+
+                // using the click handlers to replace the "onclick"
+                $('#showInfo1').click(function() {
+                    myNewObject1.showInfo();
+                })
+
+                $('#showInfo2').click(function() {
+                    myNewObject2.showInfo();
+                })
+
+                $('#setInfo').click(function() {
+                    myNewObject2.setInfo('New Information!');
+                })
+            })
+        </script>
+    </head>
+
+    <body>
+        <h1>First example of rewriting code to jQuery</h1>
+        <h2>Hour 7 - Listing 7.2</h2>
+
+        <input type="button" id="showInfo1" value="Show Info 1"/>
+        <input type="button" id="showInfo2" value="Show Info 2"/>
+        <input type="button" id="setInfo" value="Change info of object2"/>
+
+        <a href="lesson20two.html">Second example</a>
+    </body>
+</html>
