@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="jquery-ui-1.13.2.custom/jquery-ui.theme.css"/>
+        <script src="jquery-ui-1.13.2.custom/jquery-ui.min.js"></script>
+        <script src="jquery-ui-1.13.2.custom/external/jquery/jquery.js"></script>
+
+        <title>Lesson 21 Lab</title>
+
+        <style>
+            #dragdiv {
+                width: 100px;
+                height: 100px;
+                border: 1px solid black;
+                padding: 5px;
+            }
+        </style>
+
+        <script>
+            $(function() {
+                $("#dragdiv").draggable();
+            });
+        </script>
+    </head>
+
+    <body>
+        <h3>Eggplant theme</h3>
+        <h4>Interactions - Drag and Drop</h4>
+
+
+        <div id="dragdiv">Drag this element around the page!</div>
+    </body>
+
+</html>
