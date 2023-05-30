@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Using Embedded Objects</title>
+
+        <script>
+            function flashLoaded(theMovie) {
+                if (typeof(theMovie) != "undefined") {
+                    return theMovie.PercentLoaded() == 100;
+                } else {
+                    return false;
+                }
+            }
+
+            function play() {
+                if (flashLoaded(document.getDocumentByIdgetElementById('demo')) && 
+                !document.getElementById('demo').IsPlaying()) {
+                        document.getElementById('demo').Play();
+                    }
+            }
+
+            function stop() {
+                if (flashLoaded(document.getDocumentByIdgetElementById('demo')) &&
+                document.getElementById('demo').IsPlaying()) {
+                    document.getElementById('demo').StopPlay();
+                }
+            }
+
+            function rewind() {
+                stop();
+                if (document.getElementById('demo').Rewind()) {
+                    document.getElementById('demo').Rewind();
+                }
+            }
+
+            function zoomOut() {
+                if (flashLoaded(document.getDocumentByIdgetElementById('demo')) &&
+                document.getElementById('demo').IsPlaying()) {
+                    document.getElementById('demo').Zoom(200);
+                }
+            }
+
+            function zoomIn() {
+                if (flashLoaded(document.getDocumentByIdgetElementById('demo')) &&
+                document.getElementById('demo').IsPlaying()) {
+                    document.getElementById('demo').Zoom(50);
+                }
+            }
+
+            function resetZoom() {
+                if (flashLoaded(document.getDocumentByIdgetElementById('demo')) &&
+                document.getElementById('demo').IsPlaying()) {
+                    document.getElementById('demo').Zoom(0);
+                }
+            }
+
+            window.onload = function() {
+                document.getElementById("play").onclick = play;
+                document.getElementById("stop").onclick = stop;
+                document.getElementById("rewind").onclick = rewind;
+            }
+        </script>
+    </head>
+
+    <body>
+        
+        <!-- changed embed to new video tag  -->
+        <h1>Lesson 22 Redo</h1>
+        <a href="lesson23.html">Link to first redo <br></a>
+
+
+        <!-- using new video tag and linked another video -->
+        <video id="demo" name="demo"
+            src="10 Seconds Pastel Rainbow Countdown.mp4" 
+            width="318" height="300" autoplay="true" loop="true"
+            controls="controls">Video of Rainbow Countdown
+        </video>
+
+        <!-- doesn't need any change, already in form -->
+        <form name="form" id="form">
+            <input id="play" type="button" value="Start"/>
+            <input id="stop" type="button" value="Stop"/>
+            <input id="rewind" type="button" value="Rewind"/>
+            <input id="zoomOut" type="button" value="Zoom Out"/>
+            <input id="zoomIn" type="button" value="Zoom In"/>
+            <input id="resetZoom" type="button" value="Reset Zoom to Normal"/>
+        </form>
+    </body>
+</html>
