@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Using Embedded Objects</title>
+
+        <script>
+            function flashLoaded(theMovie) {
+                if (typeof(theMovie) != "undefined") {
+                    return theMovie.PercentLoaded() == 100;
+                } else {
+                    return false;
+                }
+            }
+
+            function play() {
+                if (flashLoaded(document.getDocumentByIdgetElementById('demo')) && 
+                !document.getElementById('demo').IsPlaying()) {
+                        document.getElementById('demo').Play();
+                    }
+            }
+
+            function stop() {
+                if (flashLoaded(document.getDocumentByIdgetElementById('demo')) &&
+                document.getElementById('demo').IsPlaying()) {
+                    document.getElementById('demo').StopPlay();
+                }
+            }
+
+            function rewind() {
+                stop();
+                if (document.getElementById('demo').Rewind()) {
+                    document.getElementById('demo').Rewind();
+                }
+            }
+
+            function zoomOut() {
+                if (flashLoaded(document.getDocumentByIdgetElementById('demo')) &&
+                document.getElementById('demo').IsPlaying()) {
+                    document.getElementById('demo').Zoom(200);
+                }
+            }
+
+            function zoomIn() {
+                if (flashLoaded(document.getDocumentByIdgetElementById('demo')) &&
+                document.getElementById('demo').IsPlaying()) {
+                    document.getElementById('demo').Zoom(50);
+                }
+            }
+
+            function resetZoom() {
+                if (flashLoaded(document.getDocumentByIdgetElementById('demo')) &&
+                document.getElementById('demo').IsPlaying()) {
+                    document.getElementById('demo').Zoom(0);
+                }
+            }
+
+            window.onload = function() {
+                document.getElementById("play").onclick = play;
+                document.getElementById("stop").onclick = stop;
+                document.getElementById("rewind").onclick = rewind;
+            }
+        </script>
+    </head>
+
+    <body>
+        <embed id="demo" name="demo"
+            src="example.swf"
+            width="318" height="300" play="false" loop="false"
+            pluginspage="http://www.macromedia.com/go/getflashplayer"
+            swliveconnect="true">
+        </embed>
+
+        <form name="form" id="form">
+            <input id="play" type="button" value="Start"/>
+            <input id="stop" type="button" value="Stop"/>
+            <input id="rewind" type="button" value="Rewind"/>
+            <input id="zoomOut" type="button" value="Zoom Out"/>
+            <input id="zoomIn" type="button" value="Zoom In"/>
+            <input id="resetZoom" type="button" value="Reset Zoom to Normal"/>
+        </form>
+    </body>
+</html>
